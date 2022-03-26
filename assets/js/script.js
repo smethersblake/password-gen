@@ -20,7 +20,6 @@ function generatePassword() {
     console.log(upperCase, passNumbers, specialChar);
     console.log(passLength)
     generator(upperCase, passNumbers, specialChar, passLength);
-    console.log('hello')
     console.log(genPassword);
     return genPassword;
     }
@@ -28,44 +27,78 @@ function generatePassword() {
 var generator = function(upperCase, passNumbers, specialChar, passLength) {
     genPassword = '';
 
-    if (upperCase && passNumbers && specialChar) {
+    switch(upperCase, passNumbers, specialChar){
+        case upperCase && passNumbers && specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
-        console.log("all true");
-    }
-    else if (!upperCase && passNumbers && specialChar) {
+            console.log("all true");
+            break;
+        case !upperCase && passNumbers && specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+"
-        console.log("upper false");
-    }
-    else if (upperCase && !passNumbers && specialChar) {
+            console.log("upper false");
+            break;
+        case upperCase && !passNumbers && specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+"
-        console.log('pass number false');
-    }
-    else if (upperCase && passNumbers && !specialChar) {
+            console.log('pass number false');
+            break;
+        case upperCase && passNumbers && !specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        console.log("special false");
-    }
-    else if (!upperCase && !passNumbers && specialChar) {
+            console.log("special false");
+            break;
+        case !upperCase && !passNumbers && specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+"
-        console.log('upper and number false');
-    }
-    else if (!upperCase && passNumbers && !specialChar) {
-        console.log('upper and special false');
+            console.log("upper and number false");
+            break;
+        case !upperCase && passNumbers && !specialChar:
             var characters = "abcdefghijklmnopqrstuvwxyz0123456789"
+            console.log("upper and special false");
+            break;
+        case upperCase && !passNumbers && !specialChar:
+            var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            console.log("numbers and special false");
+            break;
+        case !upperCase && !passNumbers && !specialChar:
+            var characters = "abcdefghijklmnopqrstuvwxyz"
+            console.log("all false");
+            break;
     }
-    else if (upperCase && !passNumbers && !specialChar){
-        var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        console.log('pass numbers and special false');
-    }
-    else {
-        var characters = "abcdefghijklmnopqrstuvwxyz"
-        console.log ('all false');
-    }
+    // if (upperCase && passNumbers && specialChar) {
+    //         var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
+    //     console.log("all true");
+    // }
+    // else if (!upperCase && passNumbers && specialChar) {
+    //         var characters = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+"
+    //     console.log("upper false");
+    // }
+    // else if (upperCase && !passNumbers && specialChar) {
+    //         var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+"
+    //     console.log('pass number false');
+    // }
+    // else if (upperCase && passNumbers && !specialChar) {
+    //         var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    //     console.log("special false");
+    // }
+    // else if (!upperCase && !passNumbers && specialChar) {
+    //         var characters = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+"
+    //     console.log('upper and number false');
+    // }
+    // else if (!upperCase && passNumbers && !specialChar) {
+    //     console.log('upper and special false');
+    //         var characters = "abcdefghijklmnopqrstuvwxyz0123456789"
+    // }
+    // else if (upperCase && !passNumbers && !specialChar){
+    //     var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    //     console.log('pass numbers and special false');
+    // }
+    // else {
+    //     var characters = "abcdefghijklmnopqrstuvwxyz"
+    //     console.log ('all false');
+    // }
     charactersLength = characters.length;
     console.log(characters.length)
     for ( var i = 0; i < passLength; i++) {
     genPassword += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-    // console.log(genPassword);
+    console.log(genPassword);
     return genPassword;
 }
 
