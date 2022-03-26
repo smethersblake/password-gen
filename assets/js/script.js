@@ -5,7 +5,7 @@ function generatePassword() {
     var passLength = window.prompt("Select password lenght. (8 - 128)");
     while (passLength < 8 || passLength > 128) {
         var passLength = window.prompt("Please select a vaild length (8 - 128)")
-    }
+    };
     var upperCase = window.confirm("Would you like upper case letters?")
     var passNumbers = window.confirm("Would you like numbers?")
     var specialChar = window.confirm("Would you like special characters?")
@@ -63,7 +63,7 @@ var generator = function(upperCase, passNumbers, specialChar, passLength) {
     }
     // returns the generated password to the global var genPassword
     return genPassword;
-}
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
